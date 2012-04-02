@@ -4,3 +4,6 @@
 [submodule "bundle/notes.vim"]
 	path = bundle/notes.vim
 	url = git://github.com/vim-scripts/notes.vim.git
+[submodule "bundle/vim-task"]
+	path = bundle/vim-task
+	url = git://github.com/samsonw/vim-task.git
