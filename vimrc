@@ -37,7 +37,9 @@ if has("gui_running")
 else
   set background=light
 endif
-color solarized
+" color solarized
+" color jellybeans
+color vividchalk
 set guifont=Menlo\ Regular:h14
 
 " rPovide some context when editing
@@ -54,3 +56,12 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" Command T
+"" ignore files and folders
+set wildignore+=*.o,*.obj,*.git,*.log,*.tmp,*.jpeg,*.jpg,*.png,*.gif,*.mp3,*.pdf,*.swf,*.pyc,*.psd
+set wildignore+=bundle/**,system/**,uploads/**,log/**,tmp/**
+
+" Remove trailing whitespaces
+autocmd BufWritePre *.rb,*.js,*.rake,*.tasks :%s/\s\+$//e
+
