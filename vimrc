@@ -63,5 +63,5 @@ set wildignore+=*.o,*.obj,*.git,*.log,*.tmp,*.jpeg,*.jpg,*.png,*.gif,*.mp3,*.pdf
 set wildignore+=bundle/**,system/**,uploads/**,log/**,tmp/**
 
 " Remove trailing whitespaces
-autocmd BufWritePre *.rb,*.js,*.rake,*.tasks :%s/\s\+$//e
+autocmd BufWritePre *.rb,*.js,*.rake,*.tasks,*.html :%s/\s\+$//e
 
