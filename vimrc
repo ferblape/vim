@@ -49,8 +49,8 @@ else
   set background=light
 endif
 " color solarized
-" color jellybeans
-color vividchalk
+color jellybeans
+" color vividchalk
 set guifont=Menlo\ Regular:h14
 
 " Povide some context when editing
@@ -81,10 +81,6 @@ noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-inoremap <left> <nop>
-inoremap <right> <nop>
 
 " Clean search
 nnoremap <leader><space> :noh<cr>
@@ -100,4 +96,5 @@ inoremap jj <ESC>
 
 " Open a vertical window and switch over it
 nnoremap <leader>w <C-w>v<C-w>l
-
+" Open a horizontal window and switch over it
+nnoremap <leader>W <C-w>s<C-w>j
