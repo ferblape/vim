@@ -94,6 +94,11 @@ nnoremap <leader>a :Ack
 " Change way to come back to normal mode
 inoremap jj <ESC>
 
+" Exit insert mode, insert a begin of block (do or {), close the block and 
+" go inside the block
+inoremap jdo <ESC>A<space>do<Enter>end<ESC>ko
+inoremap j{ <ESC>A<space>{<Enter>}<ESC>ko
+
 " Open a vertical window and switch over it
 nnoremap <leader>w <C-w>v<C-w>l
 " Open a horizontal window and switch over it
