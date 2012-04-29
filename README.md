@@ -1,4 +1,4 @@
-# Vim config files
+# Vim
 
 My vim configuration files
 
@@ -16,8 +16,7 @@ git submodule init
 git submodule update 
 ```
 
-## Author
+## Contact me
 
-Fernando Blat
-<ferblape at gmail.com>
-(@ferblape)[http://twitter.com/ferblape]
+`ferblape at gmail.com`
+[@ferblape](http://twitter.com/ferblape)
