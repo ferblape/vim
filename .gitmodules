@@ -34,3 +34,6 @@
 [submodule "bundle/vim-supertab"]
 	path = bundle/vim-supertab
 	url = https://github.com/tsaleh/vim-supertab.git
+[submodule "bundle/command-t"]
+	path = bundle/command-t
+	url = git://git.wincent.com/command-t.git
