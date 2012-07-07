@@ -106,3 +106,7 @@ inoremap j{ <ESC>A<space>{<Enter>}<ESC>ko
 nnoremap <leader>w <C-w>v<C-w>l
 " Open a horizontal window and switch over it
 nnoremap <leader>W <C-w>s<C-w>j
+
+" NERDTree
+nnoremap <leader>n :NERDTree<Enter>
+nnoremap <leader>c :NERDTreeClose<Enter>
