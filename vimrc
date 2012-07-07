@@ -4,6 +4,9 @@ call pathogen#infect()
 " Set line numbers
 if has("gui_running")
   set relativenumber
+  set guioptions-=T " no toolbar
+  set guioptions-=r
+  set guioptions-=L
 else
   set number
 end
@@ -74,7 +77,7 @@ set wildignore+=*.o,*.obj,*.git,*.log,*.tmp,*.jpeg,*.jpg,*.png,*.gif,*.mp3,*.pdf
 set wildignore+=bundle/**,system/**,uploads/**,log/**,tmp/**
 
 " Remove trailing whitespaces
-autocmd BufWritePre *.rb,*.js,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh :%s/\s\+$//e
+" autocmd BufWritePre *.rb,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh :%s/\s\+$//e
 
 " Disable arrows even in insert mode
 noremap <Up> <nop>
