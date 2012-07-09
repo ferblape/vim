@@ -4,9 +4,6 @@
 [submodule "bundle/vim-task"]
 	path = bundle/vim-task
 	url = git://github.com/samsonw/vim-task.git
-[submodule "bundle/vim-markdown"]
-	path = bundle/vim-markdown
-	url = git://github.com/plasticboy/vim-markdown.git
 [submodule "bundle/jellybeans.vim"]
 	path = bundle/jellybeans.vim
 	url = git://github.com/nanotech/jellybeans.vim.git
@@ -25,9 +22,6 @@
 [submodule "bundle/vim-colors-solarized"]
 	path = bundle/vim-colors-solarized
 	url = git://github.com/altercation/vim-colors-solarized.git
-[submodule "bundle/snipmate.vim"]
-	path = bundle/snipmate.vim
-	url = git://github.com/msanders/snipmate.vim.git
 [submodule "bundle/vim-supertab"]
 	path = bundle/vim-supertab
 	url = https://github.com/tsaleh/vim-supertab.git
@@ -43,3 +37,6 @@
 [submodule "bundle/vim-matchit"]
 	path = bundle/vim-matchit
 	url = git://github.com/mirell/vim-matchit.git
+[submodule "bundle/vim-coffee-script"]
+	path = bundle/vim-coffee-script
+	url = git://github.com/kchmck/vim-coffee-script.git
