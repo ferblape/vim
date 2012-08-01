@@ -110,3 +110,6 @@ nnoremap <leader>W <C-w>s<C-w>j
 " NERDTree
 nnoremap <leader>n :NERDTree<Enter>
 nnoremap <leader>c :NERDTreeClose<Enter>
+
+" Remove the whole line without yanking
+nnoremap <leader>d 0"_D
