@@ -46,11 +46,8 @@ set ignorecase                  " searches are case insensitive...
 set smartcase                   " ... unless they contain at least one capital letter
 
 "" Fonts and colors
-if has("gui_running")
-  set background=dark
-else
-  set background=light
-endif
+set background=dark
+" color mac_classic
 " color solarized
 color jellybeans
 " color vividchalk
@@ -77,7 +74,7 @@ set wildignore+=*.o,*.obj,*.git,*.log,*.tmp,*.jpeg,*.jpg,*.png,*.gif,*.mp3,*.pdf
 set wildignore+=bundle/**,system/**,uploads/**,log/**,tmp/**
 
 " Remove trailing whitespaces
-" autocmd BufWritePre *.rb,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh :%s/\s\+$//e
+  " autocmd BufWritePre *.rb,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh :%s/\s\+$//e
 
 " Disable arrows even in insert mode
 noremap <Up> <nop>
@@ -108,8 +105,17 @@ nnoremap <leader>w <C-w>v<C-w>l
 nnoremap <leader>W <C-w>s<C-w>j
 
 " NERDTree
-nnoremap <leader>n :NERDTree<Enter>
-nnoremap <leader>c :NERDTreeClose<Enter>
+nnoremap <leader>n :NERDTreeTabsOpen<Enter>
+nnoremap <leader>c :NERDTreeTabsClose<Enter>
 
 " Remove the whole line without yanking
 nnoremap <leader>d 0"_D
+
+" Save your swp files to a less annoying place than the current directory
+if isdirectory($HOME . '/.vim/swap') == 0
+  :silent !mkdir -p ~/.vim/swap >/dev/null 2>&1
+endif
+set directory=~/.vim/swap
+
+" automatically reload vimrc when it's saved
+au BufWritePost .vimrc so ~/.vim/vimrc
