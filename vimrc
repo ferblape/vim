@@ -18,6 +18,7 @@ set encoding=utf-8
 set showcmd                     " display incomplete commands
 set showmode
 set ruler
+set autoread
 filetype plugin indent on       " load file type plugins + indentation
 
 "" Whitespace
@@ -29,6 +30,7 @@ set autoindent
 set expandtab                   " use spaces, not tabs (optional)
 set backspace=indent,eol,start  " backspace through everything in insert mode
 set list                        " Show invisible characters
+set colorcolumn=100
 
 " List chars
 set listchars=""                  " Reset the listchars
@@ -49,8 +51,9 @@ set smartcase                   " ... unless they contain at least one capital l
 set background=dark
 " color mac_classic
 " color solarized
-color jellybeans
+" color jellybeans
 " color vividchalk
+color Tomorrow-Night-Eighties
 set guifont=Menlo\ Regular:h14
 
 " Povide some context when editing
@@ -74,13 +77,17 @@ set wildignore+=*.o,*.obj,*.git,*.log,*.tmp,*.jpeg,*.jpg,*.png,*.gif,*.mp3,*.pdf
 set wildignore+=bundle/**,system/**,uploads/**,log/**,tmp/**
 
 " Remove trailing whitespaces
-  " autocmd BufWritePre *.rb,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh :%s/\s\+$//e
+" autocmd BufWritePre *.rb,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh :%s/\s\+$//e
 
 " Disable arrows even in insert mode
 noremap <Up> <nop>
 noremap <Down> <nop>
 noremap <Left> <nop>
 noremap <Right> <nop>
+
+" Map move between tabs
+nnoremap <leader>f gT
+nnoremap <leader>g gt
 
 " Clean search
 nnoremap <leader><space> :noh<cr>
