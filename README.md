@@ -2,6 +2,10 @@
 
 My vim configuration files
 
+## Requirements
+
+- Ctags (install it via brew `brew install ctags`)
+
 ## How to install them
 
 ```bash
@@ -13,7 +17,7 @@ mv vim .vim
 ln -s .vim/vimrc .vimrc
 cd .vim
 git submodule init
-git submodule update 
+git submodule update
 ```
 
 ## Contact me
