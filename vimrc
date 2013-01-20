@@ -45,7 +45,7 @@ set listchars+=precedes:<         " The character to show in the first column wh
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
 set ignorecase                  " searches are case insensitive...
-set smartcase                   " ... unless they contain at least one capital letter
+" set smartcase                   " ... unless they contain at least one capital letter
 
 "" Fonts and colors
 set background=dark
@@ -58,6 +58,9 @@ set guifont=Menlo\ Regular:h14
 
 " Povide some context when editing
 set scrolloff=3
+
+" Gem tags
+set tags+=gems.tags
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -88,6 +91,7 @@ noremap <Right> <nop>
 " Map move between tabs
 nnoremap <leader>f gT
 nnoremap <leader>g gt
+map <leader>q <C-]>
 
 " Clean search
 nnoremap <leader><space> :noh<cr>
@@ -126,3 +130,8 @@ set directory=~/.vim/swap
 
 " automatically reload vimrc when it's saved
 au BufWritePost .vimrc so ~/.vim/vimrc
+
+" goes to the definition of a Ruby method when
+" cursor is inside of it
+:nmap [[ ?def <CR>
+:nmap ]] /def <CR>
