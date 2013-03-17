@@ -135,3 +135,9 @@ au BufWritePost .vimrc so ~/.vim/vimrc
 " cursor is inside of it
 :nmap [[ ?def <CR>
 :nmap ]] /def <CR>
+
+" tidy xmls
+nnoremap <C>x :%!tidy -i -xml -q
+
+let g:closetag_html_style=1
+source ~/.vim/bundle/closetag.vim
