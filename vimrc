@@ -121,6 +121,8 @@ nnoremap <leader>c :NERDTreeTabsClose<Enter>
 
 " Remove the whole line without yanking
 nnoremap <leader>d 0"_D
+" Delete without yanking (i.e do Rd instead of dd, or R$ instead of d$)
+nnoremap R "_d
 
 " Save your swp files to a less annoying place than the current directory
 if isdirectory($HOME . '/.vim/swap') == 0
