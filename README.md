@@ -9,6 +9,7 @@ My vim configuration files
 ## How to install
 
 ```bash
+curl "https://raw.github.com/ferblape/vim/master/install.sh" | sh
 ```
 
 ## Contact me
