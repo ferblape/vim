@@ -99,6 +99,8 @@ nnoremap <leader><space> :noh<cr>
 nnoremap <tab> %
 vnoremap <tab> %
 
+" Search using ag
+let g:ackprg = 'ag --nogroup --nocolor --column'
 " Map <leader>a to Ack
 nnoremap <leader>a :Ack
 
