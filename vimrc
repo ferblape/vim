@@ -20,6 +20,7 @@ set showmode
 set ruler
 set autoread
 filetype plugin indent on       " load file type plugins + indentation
+runtime macros/matchit.vim      " enable matchit plugin
 
 "" Whitespace
 set nowrap                      " don't wrap lines
@@ -44,7 +45,7 @@ set listchars+=precedes:<         " The character to show in the first column wh
 "" Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
-set ignorecase                  " searches are case insensitive...
+set noignorecase
 " set smartcase                   " ... unless they contain at least one capital letter
 
 "" Fonts and colors
@@ -73,6 +74,12 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
+
+" Closetags plugin
+" set Filetype html,xml,xsl,erb
+source ~/.vim/bundle/closetag.vim
+let g:closetag_html_style=1
+inoremap <c-g> <C-R>=GetCloseTag()<CR>
 
 " Command T plugin
 "" ignore files and folders
