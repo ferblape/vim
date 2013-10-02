@@ -171,3 +171,8 @@ let g:rails_projections = {
 " snippets
 iab sap save_and_open_page
 iab d debugger
+
+nmap <silent> <leader>s :set spell!<CR>
+
+" Set region to British English
+set spelllang=en_gb
