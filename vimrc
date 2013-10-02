@@ -99,6 +99,8 @@ noremap <Right> <nop>
 nnoremap <leader>f gT
 nnoremap <leader>g gt
 map <leader>q <C-]>
+map <leader>Q :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
+
 
 " Clean search
 nnoremap <leader><space> :noh<cr>
@@ -150,5 +152,19 @@ au BufWritePost .vimrc so ~/.vim/vimrc
 " tidy xmls
 nnoremap <C>x :%!tidy -i -xml -q
 
-let g:closetag_html_style=1
-source ~/.vim/bundle/closetag.vim
+let g:rails_projections = {
+\ "config/projections.json": {
+\   "command": "projections"
+\ },
+\ "vendor/metadata-exporters/cardinal/lib/cardinal/*.rb": {
+\   "command": "cardinal",
+\  "test": "vendor/metadata-exporters/cardinal/spec/%s_spec.rb"
+\ },
+\ "spec/features/*_spec.rb": {
+\   "command": "feature",
+\   "template": "require 'spec_helper'\n\nfeature '%h' do\n\nend",
+\ }}
+
+" snippets
+iab sap save_and_open_page
+iab d debugger
