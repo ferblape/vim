@@ -33,6 +33,9 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 set list                        " Show invisible characters
 set colorcolumn=100
 
+" Set markdown files length to 100
+au BufRead,BufNewFile *.md setlocal textwidth=100
+
 " List chars
 set listchars=""                  " Reset the listchars
 set listchars=tab:▸\              " a tab should display as "  ", trailing whitespace as "."
