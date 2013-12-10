@@ -33,6 +33,10 @@ set backspace=indent,eol,start  " backspace through everything in insert mode
 set list                        " Show invisible characters
 set colorcolumn=100
 
+" Allows you to jump to a file without saving it
+set hidden
+" Tip: Use Ctrl + o to jump to the previous file
+
 " Set markdown files length to 100
 au BufRead,BufNewFile *.md setlocal textwidth=100
 
@@ -48,8 +52,8 @@ set listchars+=precedes:<         " The character to show in the first column wh
 "" Searching
 set hlsearch                    " highlight matches
 set incsearch                   " incremental searching
-set noignorecase
-" set smartcase                   " ... unless they contain at least one capital letter
+set ignorecase
+set smartcase                   " ... unless they contain at least one capital letter
 
 "" Fonts and colors
 set background=dark
@@ -160,17 +164,22 @@ let g:rails_projections = {
 \   "command": "projections"
 \ },
 \ "vendor/metadata-exporters/cardinal/lib/cardinal/*.rb": {
-\   "command": "cardinal",
+\  "command": "cardinal",
 \  "test": "vendor/metadata-exporters/cardinal/spec/%s_spec.rb"
+\ },
+\ "vendor/metadata-exporters/xml_technique/lib/xml_technique/*.rb": {
+\  "command": "xml_technique",
+\  "related": "vendor/metadata-exporters/xml_technique/lib/xml_technique/manifest.xml.erb",
+\  "test": "vendor/metadata-exporters/xml_technique/spec/%s_spec.rb"
 \ },
 \ "spec/features/*_spec.rb": {
 \   "command": "feature",
 \   "template": "require 'spec_helper'\n\nfeature '%h' do\n\nend",
-\ }}
+\ },
+\}
 
 " snippets
 iab sap save_and_open_page
-iab d debugger
 
 nmap <silent> <leader>s :set spell!<CR>
 
