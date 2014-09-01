@@ -38,7 +38,7 @@ set hidden
 " Tip: Use Ctrl + o to jump to the previous file
 
 " Set markdown files length to 100
-au BufRead,BufNewFile *.md setlocal textwidth=100
+" au BufRead,BufNewFile *.md setlocal textwidth=100
 
 " List chars
 set listchars=""                  " Reset the listchars
@@ -96,18 +96,14 @@ set wildignore+=bundle/**,system/**,uploads/**,log/**,tmp/**
 " Remove trailing whitespaces
 " autocmd BufWritePre *.rb,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh :%s/\s\+$//e
 
-" Disable arrows even in insert mode
-noremap <Up> <nop>
-noremap <Down> <nop>
-noremap <Left> <nop>
-noremap <Right> <nop>
-
 " Map move between tabs
 nnoremap <leader>f gT
 nnoremap <leader>g gt
-map <leader>q <C-]>
-map <leader>Q :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
+" TODO: not sure
+map <leader>q <C-]>
+" Run tag command
+map <leader>Q :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 
 " Clean search
 nnoremap <leader><space> :noh<cr>
@@ -133,10 +129,6 @@ nnoremap <leader>w <C-w>v<C-w>l
 " Open a horizontal window and switch over it
 nnoremap <leader>W <C-w>s<C-w>j
 
-" NERDTree
-nnoremap <leader>n :NERDTreeTabsOpen<Enter>
-nnoremap <leader>c :NERDTreeTabsClose<Enter>
-
 " Remove the whole line without yanking
 nnoremap <leader>d 0"_D
 " Delete without yanking (i.e do Rd instead of dd, or R$ instead of d$)
@@ -160,21 +152,8 @@ au BufWritePost .vimrc so ~/.vim/vimrc
 nnoremap <C>x :%!tidy -i -xml -q
 
 let g:rails_projections = {
-\ "config/projections.json": {
+\ "tmp/.projections.json": {
 \   "command": "projections"
-\ },
-\ "vendor/metadata-exporters/cardinal/lib/cardinal/*.rb": {
-\  "command": "cardinal",
-\  "test": "vendor/metadata-exporters/cardinal/spec/%s_spec.rb"
-\ },
-\ "vendor/metadata-exporters/xml_technique/lib/xml_technique/*.rb": {
-\  "command": "xml_technique",
-\  "related": "vendor/metadata-exporters/xml_technique/lib/xml_technique/manifest.xml.erb",
-\  "test": "vendor/metadata-exporters/xml_technique/spec/%s_spec.rb"
-\ },
-\ "spec/features/*_spec.rb": {
-\   "command": "feature",
-\   "template": "require 'spec_helper'\n\nfeature '%h' do\n\nend",
 \ },
 \}
 
