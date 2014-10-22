@@ -82,16 +82,11 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-" Closetags plugin
-" set Filetype html,xml,xsl,erb
-source ~/.vim/bundle/closetag.vim
-let g:closetag_html_style=1
-inoremap <c-g> <C-R>=GetCloseTag()<CR>
-
 " Command T plugin
 "" ignore files and folders
 set wildignore+=*.o,*.obj,*.git,*.log,*.tmp,*.jpeg,*.jpg,*.png,*.gif,*.mp3,*.pdf,*.swf,*.pyc,*.psd
 set wildignore+=bundle/**,system/**,uploads/**,log/**,tmp/**
+set wildignore+=tags
 
 " Remove trailing whitespaces
 " autocmd BufWritePre *.rb,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh :%s/\s\+$//e
@@ -164,3 +159,10 @@ nmap <silent> <leader>s :set spell!<CR>
 
 " Set region to British English
 set spelllang=en_gb
+
+inoremap <M-o>       <Esc>o
+inoremap <C-j>       <Down>
+let g:ragtag_global_maps = 1
+
+" Copy current filename to system clipboard
+nnoremap <Leader>yf :let @*=expand("%:p")<cr>:echo "Copied file name to clipboard"<cr>
