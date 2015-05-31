@@ -22,7 +22,7 @@ set autoread
 filetype plugin indent on       " load file type plugins + indentation
 runtime macros/matchit.vim      " enable matchit plugin
 
-"" Whitespace
+" Whitespace
 set nowrap                      " don't wrap lines
 set tabstop=2
 set shiftwidth=2                " a tab is two spaces (or set this to 4)
@@ -38,7 +38,7 @@ set hidden
 " Tip: Use Ctrl + o to jump to the previous file
 
 " Set markdown files length to 100
-" au BufRead,BufNewFile *.md setlocal textwidth=100
+au BufRead,BufNewFile *.md setlocal textwidth=100
 
 " List chars
 set listchars=""                  " Reset the listchars
@@ -49,13 +49,13 @@ set listchars+=extends:>          " The character to show in the last column whe
                                   " off and the line continues beyond the right of the screen
 set listchars+=precedes:<         " The character to show in the first column when wrap is
                                   " off and the line continues beyond the left of the screen
-"" Searching
-set hlsearch                    " highlight matches
-set incsearch                   " incremental searching
+" Searching
+set hlsearch                      " highlight matches
+set incsearch                     " incremental searching
 set ignorecase
-set smartcase                   " ... unless they contain at least one capital letter
+set smartcase                     " ... unless they contain at least one capital letter
 
-"" Fonts and colors
+" Fonts and colors
 set background=dark
 " color mac_classic
 " color solarized
@@ -87,6 +87,7 @@ nnoremap <c-l> <c-w>l
 set wildignore+=*.o,*.obj,*.git,*.log,*.tmp,*.jpeg,*.jpg,*.png,*.gif,*.mp3,*.pdf,*.swf,*.pyc,*.psd
 set wildignore+=bundle/**,system/**,uploads/**,log/**,tmp/**
 set wildignore+=tags
+set wildignore+=.git/**
 
 " Remove trailing whitespaces
 " autocmd BufWritePre *.rb,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh :%s/\s\+$//e
@@ -95,7 +96,7 @@ set wildignore+=tags
 nnoremap <leader>f gT
 nnoremap <leader>g gt
 
-" TODO: not sure
+" TODO: not sure what it does
 map <leader>q <C-]>
 " Run tag command
 map <leader>Q :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
@@ -154,6 +155,7 @@ let g:rails_projections = {
 
 " snippets
 iab sap save_and_open_page
+iab cl console.log();
 
 nmap <silent> <leader>s :set spell!<CR>
 

@@ -64,3 +64,6 @@
 [submodule "vim-go"]
 	path = vim-go
 	url = git@github.com:fatih/vim-go.git
+[submodule "bundle/vim-symbols-strings"]
+	path = bundle/vim-symbols-strings
+	url = git@github.com:vim-scripts/vim-symbols-strings.git
