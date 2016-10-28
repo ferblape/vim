@@ -3,13 +3,14 @@ call pathogen#infect()
 
 " Set line numbers
 if has("gui_running")
-  set relativenumber
   set guioptions-=T " no toolbar
   set guioptions-=r
   set guioptions-=L
 else
   set number
 end
+
+set relativenumber
 
 set nocompatible                " choose no compatibility with legacy vi
 set modelines=0                 " prevents some security exploits having to do with modelines in files
@@ -62,7 +63,8 @@ set background=dark
 " color jellybeans
 " color vividchalk
 color Tomorrow-Night-Eighties
-set guifont=Menlo\ Regular:h14
+" set guifont=Menlo\ Regular:h14
+set guifont=Iosevka:h14
 
 " Povide some context when editing
 set scrolloff=3
@@ -90,7 +92,7 @@ set wildignore+=tags
 set wildignore+=.git/**
 
 " Remove trailing whitespaces
-" autocmd BufWritePre *.rb,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh :%s/\s\+$//e
+autocmd BufWritePre *.rb,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh,*.js :%s/\s\+$//e
 
 " Map move between tabs
 nnoremap <leader>f gT
@@ -112,8 +114,8 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 " Map <leader>a to Ack
 nnoremap <leader>a :Ack
 
-" Change way to come back to normal mode
-inoremap jj <ESC>
+" Change to normal mode and save
+inoremap jj <ESC>:w
 
 " Exit insert mode, insert a begin of block (do or {), close the block and 
 " go inside the block
@@ -147,15 +149,10 @@ au BufWritePost .vimrc so ~/.vim/vimrc
 " tidy xmls
 nnoremap <C>x :%!tidy -i -xml -q
 
-let g:rails_projections = {
-\ "tmp/.projections.json": {
-\   "command": "projections"
-\ },
-\}
-
 " snippets
 iab sap save_and_open_page
 iab cl console.log();
+iab tick ✔︎
 
 nmap <silent> <leader>s :set spell!<CR>
 
@@ -168,3 +165,6 @@ let g:ragtag_global_maps = 1
 
 " Copy current filename to system clipboard
 nnoremap <Leader>yf :let @*=expand("%:p")<cr>:echo "Copied file name to clipboard"<cr>
+
+let g:user_emmet_leader_key='<leader>'
+

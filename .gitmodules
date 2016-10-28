@@ -67,3 +67,12 @@
 [submodule "bundle/vim-symbols-strings"]
 	path = bundle/vim-symbols-strings
 	url = git@github.com:vim-scripts/vim-symbols-strings.git
+[submodule "emmet-vim"]
+	path = emmet-vim
+	url = http://github.com/mattn/emmet-vim.git
+[submodule "bundle/emmet-vim"]
+	path = bundle/emmet-vim
+	url = http://github.com/mattn/emmet-vim.git
+[submodule "bundle/vim-crystal"]
+	path = bundle/vim-crystal
+	url = git@github.com:rhysd/vim-crystal.git
