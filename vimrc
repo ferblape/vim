@@ -168,3 +168,9 @@ nnoremap <Leader>yf :let @*=expand("%:p")<cr>:echo "Copied file name to clipboar
 
 let g:user_emmet_leader_key='<leader>'
 
+" CtrlP
+map <Leader>n <plug>NERDTreeTabsToggle<CR>
+
+let g:nerdtree_tabs_open_on_gui_startup=2
+let g:nerdtree_tabs_open_on_console_startup=1
+
