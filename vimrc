@@ -133,10 +133,10 @@ nnoremap <leader>d 0"_D
 nnoremap R "_d
 
 " Save your swp files to a less annoying place than the current directory
-if isdirectory($HOME . '/.vim/swap') == 0
-  :silent !mkdir -p ~/.vim/swap >/dev/null 2>&1
+if isdirectory($HOME . '/.vim_swap') == 0
+  :silent !mkdir -p ~/.vim_swap >/dev/null 2>&1
 endif
-set directory=~/.vim/swap
+set directory=~/.vim_swap
 
 " automatically reload vimrc when it's saved
 au BufWritePost .vimrc so ~/.vim/vimrc
