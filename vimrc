@@ -174,3 +174,9 @@ map <Leader>n <plug>NERDTreeTabsToggle<CR>
 let g:nerdtree_tabs_open_on_gui_startup=2
 let g:nerdtree_tabs_open_on_console_startup=1
 
+" Disable sound
+set noeb vb t_vb=
+
+" select last paste in visual mode
+" https://dalibornasevic.com/posts/43-12-vim-tips
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
