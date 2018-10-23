@@ -1,0 +1,20 @@
+de:
+  books:
+    index:
+      title: Alle Bücher
+    create:
+      success: Buch!
+
+  activerecord:
+    models:
+      book:
+        one: Buch
+        other: Bücher
+      table: Tisch
+    attributes:
+      book:
+        title: Titel
+      table:
+        leg: Tischbein
+
+  foo: Qux

@@ -1,0 +1,20 @@
+en:
+  books:
+    index:
+      title: All books
+    create:
+      success: Book!
+
+  activerecord:
+    models:
+      book:
+        one: Book
+        other: Books
+      table: Table
+    attributes:
+      book:
+        title: Title
+      table:
+        leg: Leg
+
+  foo: Bar
