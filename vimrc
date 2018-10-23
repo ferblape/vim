@@ -84,15 +84,17 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-h> <c-w>h
 nnoremap <c-l> <c-w>l
 
-" Command T plugin
+" Command P plugin
 "" ignore files and folders
 set wildignore+=*.o,*.obj,*.git,*.log,*.tmp,*.jpeg,*.jpg,*.png,*.gif,*.mp3,*.pdf,*.swf,*.pyc,*.psd
-set wildignore+=bundle/**,system/**,uploads/**,log/**,tmp/**
+set wildignore+=bundle/**,system/**,uploads/**,log/**,tmp/**,node_modules/**,*/node_modules/*
 set wildignore+=tags
 set wildignore+=.git/**
 
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn|node_modules)$'
+
 " Remove trailing whitespaces
-autocmd BufWritePre *.rb,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh,*.js :%s/\s\+$//e
+autocmd BufWritePre *.md,*.txt,*.rb,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh,*.js :%s/\s\+$//e
 
 " Map move between tabs
 nnoremap <leader>f gT
@@ -110,7 +112,7 @@ nnoremap <tab> %
 vnoremap <tab> %
 
 " Search using ag
-let g:ackprg = 'ag --nogroup --nocolor --column'
+let g:ackprg = 'ag --nogroup --nocolor --column --hidden'
 " Map <leader>a to Ack
 nnoremap <leader>a :Ack
 
@@ -139,7 +141,7 @@ endif
 set directory=~/.vim_swap
 
 " automatically reload vimrc when it's saved
-au BufWritePost .vimrc so ~/.vim/vimrc
+" au BufWritePost .vimrc so ~/.vim/vimrc
 
 " goes to the definition of a Ruby method when
 " cursor is inside of it
@@ -180,3 +182,13 @@ set noeb vb t_vb=
 " select last paste in visual mode
 " https://dalibornasevic.com/posts/43-12-vim-tips
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+
+" use localorie
+nnoremap <silent> <leader>lt :call localorie#translate()<CR>
+nnoremap <silent> <leader>le :call localorie#expand_key()<CR>
+
+" map write and quit
+:command WQ wq
+:command Wq wq
+:command W w
+:command Q q
