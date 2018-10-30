@@ -173,6 +173,9 @@ let g:user_emmet_leader_key='<leader>'
 " CtrlP
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
+" NerdTree
+" Show hidden files
+let NERDTreeShowHidden=1
 let g:nerdtree_tabs_open_on_gui_startup=2
 let g:nerdtree_tabs_open_on_console_startup=1
 
@@ -192,3 +195,15 @@ nnoremap <silent> <leader>le :call localorie#expand_key()<CR>
 :command Wq wq
 :command W w
 :command Q q
+
+" Syntactic plugin
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = 'eslint'
