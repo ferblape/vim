@@ -98,7 +98,7 @@ autocmd BufWritePre *.md,*.txt,*.rb,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh,
 
 " Map move between tabs
 nnoremap <leader>f gT
-nnoremap <leader>g gt
+nnoremap <leader>F gt
 
 " TODO: not sure what it does
 map <leader>q <C-]>
@@ -141,7 +141,7 @@ endif
 set directory=~/.vim_swap
 
 " automatically reload vimrc when it's saved
-" au BufWritePost .vimrc so ~/.vim/vimrc
+au BufWritePost .vimrc so ~/.vim/vimrc
 
 " goes to the definition of a Ruby method when
 " cursor is inside of it
@@ -155,6 +155,7 @@ nnoremap <C>x :%!tidy -i -xml -q
 iab sap save_and_open_page
 iab cl console.log();
 iab tick ✔︎
+iab rfr # frozen_string_literal: true
 
 nmap <silent> <leader>s :set spell!<CR>
 
@@ -168,12 +169,22 @@ let g:ragtag_global_maps = 1
 " Copy current filename to system clipboard
 nnoremap <Leader>yf :let @*=expand("%:p")<cr>:echo "Copied file name to clipboard"<cr>
 
+" copy and paste
+vmap <C-c> "+y
+vmap <C-x> "+c
+vmap <C-v> c<ESC>"+p
+imap <C-v> <ESC>"+pa
+
+" copy and paste from system clipboard
+vmap <Leader>y "*y
+vmap <Leader>p "*p
+
 let g:user_emmet_leader_key='<leader>'
 
+" NerdTree
 " CtrlP
 map <Leader>n <plug>NERDTreeTabsToggle<CR>
 
-" NerdTree
 " Show hidden files
 let NERDTreeShowHidden=1
 let g:nerdtree_tabs_open_on_gui_startup=2
@@ -190,20 +201,32 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 nnoremap <silent> <leader>lt :call localorie#translate()<CR>
 nnoremap <silent> <leader>le :call localorie#expand_key()<CR>
 
-" map write and quit
-:command WQ wq
-:command Wq wq
-:command W w
-:command Q q
+"" " Syntactic plugin
+"" " set statusline+=%#warningmsg#
+"" " set statusline+=%{SyntasticStatuslineFlag()}
+"" " set statusline+=%*
+"" let g:syntastic_auto_jump=1
+"" let g:syntastic_always_populate_loc_list = 1
+"" let g:syntastic_auto_loc_list = 1
+"" let g:syntastic_check_on_wq = 1
+"" let g:syntastic_javascript_checkers = ['prettier']
+"" let g:syntastic_javascript_eslint_exe = 'prettier'
+"" "" " Disable slow scanning of buffer.
+"" "" " TODO: look if Syntastic is calling RefreshSigns for every error during a scan.
+"" " let g:syntastic_enable_signs=0
+"" "" " Disable slow cursor movement.
+"" "" " TODO: see if better autocmd than cursormoved or something with a delay because it is slow if there are a lot of errors.
+"" let g:syntastic_echo_current_error=0
+"" let g:syntastic_ruby_rubocop_exec = '/usr/local/var/rbenv/shims/rubocop'
+"" let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
-" Syntactic plugin
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+" Avoid readonly error
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'eslint'
+inoremap <gg> G``zz
+
+" Enable autoread
+au FocusGained,BufEnter * :checktime
+
+" Faster time
+set updatetime=100
