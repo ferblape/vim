@@ -98,7 +98,7 @@ autocmd BufWritePre *.md,*.txt,*.rb,*.rake,*.tasks,*.html,*.erb,*.html.erb,*.sh,
 
 " Map move between tabs
 nnoremap <leader>f gT
-nnoremap <leader>F gt
+nnoremap <leader>g gt
 
 " TODO: not sure what it does
 map <leader>q <C-]>
@@ -217,7 +217,7 @@ nnoremap <silent> <leader>le :call localorie#expand_key()<CR>
 "" "" " Disable slow cursor movement.
 "" "" " TODO: see if better autocmd than cursormoved or something with a delay because it is slow if there are a lot of errors.
 "" let g:syntastic_echo_current_error=0
-"" let g:syntastic_ruby_rubocop_exec = '/usr/local/var/rbenv/shims/rubocop'
+"" let g:syntastic_ruby_rubocop_exec = '/home/populate/.rbenv/shims/rubocop'
 "" let g:syntastic_ruby_checkers = ['rubocop', 'mri']
 
 " Avoid readonly error
@@ -228,5 +228,26 @@ inoremap <gg> G``zz
 " Enable autoread
 au FocusGained,BufEnter * :checktime
 
+""" GitGutter
 " Faster time
 set updatetime=100
+
+" Jump between hunks
+nmap <Leader>gn <Plug>(GitGutterNextHunk)  " git next
+nmap <Leader>gp <Plug>(GitGutterPrevHunk) " git previous
+
+" Hunk-add and hunk-revert for chunk staging
+nmap <Leader>ga <Plug>(GitGutterStageHunk)  " git add (chunk)
+nmap <Leader>gu <Plug>(GitGutterUndoHunk)   " git undo (chunk)
+
+""" Vimagit
+" Open vimagit pane
+nnoremap <leader>gs :Magit<CR>       " git status
+" Push to remote
+nnoremap <leader>gP :! git push<CR>  " git 
+
+" TODO enable in the future
+"" Enable deletion of untracked files in Magit
+"" let g:magit_discard_untracked_do_delete=1
+
+let g:vfmt = 1
